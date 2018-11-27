@@ -8,9 +8,9 @@ BookmarXoon - React/Redux bookmark management app for Flickr and Vimeo links.
 
 ** Edit the .env file in the root directory and add your own API keys: **
 
-for Flickr, create an app at developers.flickr.com, then copy/paste your key: REACT_APP_FLICKR_API_KEY=**YOUR_KEY**
+for Flickr, create an app at https://www.flickr.com/services/api/, then copy/paste your key: REACT_APP_FLICKR_API_KEY=**YOUR_KEY**
 
-For Vimeo, create an app at developers.vimeo.com, then generate a token with public scope ONLY. Paste your token in the .env file:
+For Vimeo, create an app at https://developer.vimeo.com, then **generate a token with public scope ONLY**. Paste your token in the .env file:
 REACT_APP_VIMEO_TOKEN=**YOUR_TOKEN**
 
 ** Start the app with npm start **
