@@ -77,8 +77,7 @@ export function fetchPhotoInfos(photoId) {
           url: linkInfos.urls.url[0]._content,
           title: linkInfos.title._content,
           author: linkInfos.owner.realname,
-          date: new Date(linkInfos.dateuploaded*1000).toString().substring(4,15), //linkInfos.dateuploaded 
-          // date: linkInfos.dateuploaded,
+          date: new Date(linkInfos.dateuploaded*1000).toString().substring(4,15),
           width: dimensions.width,
           height: dimensions.height,
           tags: []
