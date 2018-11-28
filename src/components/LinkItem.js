@@ -22,6 +22,7 @@ class LinkItem extends Component {
                     <li><strong>height:</strong> {link.height}</li>
                     {duration}
                 </ul>
+                <p>keywords: {link.tags.length ? link.tags.join(', ') : 'no tags yet!'}</p>
                 <button onClick={() => removeLink(link.id)} className="remove-link">remove</button>
                 <button onClick={() => this.props.history.push('/' + link.id)} className="edit-button">edit tags</button>
             </div>

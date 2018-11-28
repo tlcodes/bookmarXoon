@@ -2,7 +2,11 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import LinkItem from './LinkItem';
+import LinksFilter from './LinksFilters';
 import { startFrom } from '../actions/PageActions';
+import filterLinks from '../selectors/FilterLinks';
+// import { filterMedia, filterTags } from '../selectors/FilterLinks'
+
 
 class Main extends Component {
 
@@ -50,6 +54,7 @@ class Main extends Component {
     return (
       <div className="App">
         <Link to={'/addlink'}>Add Link</Link>
+        <LinksFilter />
         {linkList}
         {paginate}
       </div>
@@ -59,7 +64,7 @@ class Main extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    links: state.appReducer.links,
+    links: filterLinks(state.appReducer.links, state.appReducer.filters),
     linksPerPage: state.appReducer.linksPerPage,
     startLink: state.appReducer.startLink
   }

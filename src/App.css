@@ -23,6 +23,7 @@ ul {
   padding: 0;
   align-items: center;
   justify-content: center;
+  flex-wrap: wrap;
 }
 
 li {
@@ -92,3 +93,9 @@ button {
   margin: 1em;
 }
 
+.links-filters, .media-filter, .tags-filter {
+  display: flex;
+  justify-content:center;
+  align-items: center;
+  flex-wrap: wrap;
+}

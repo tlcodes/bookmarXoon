@@ -5,7 +5,8 @@ const initialState = {
         {id: 'p3', title: 'example 3', url: 'http://www.example3.com', author: 'Someone Else', date:'Sep 05 2012', width: 2048, height: 1024, tags: ['hi']},
     ],
     linksPerPage: 2,
-    startLink: 0
+    startLink: 0,
+    filters: {media: 'all', tags: []}
 }
 
 const appReducer = (state = initialState, action) => {
@@ -65,6 +66,22 @@ const appReducer = (state = initialState, action) => {
             return {
                 ...state,
                 startLink: newStart
+            }
+        }
+        case 'SET_MEDIA_FILTER': {
+            let newFilters = {media: action.mediaFilter, tags: state.filters.tags};
+            return {
+                ...state,
+                filters: newFilters
+                
+            }
+        }
+        case 'SET_TAGS_FILTER': {
+            let newFilters = {media: state.filters.media, tags: action.tagsFilter[0] === "" ? [] : action.tagsFilter};
+            return {
+                ...state,
+                filters: newFilters
+                
             }
         }
         default: return state;

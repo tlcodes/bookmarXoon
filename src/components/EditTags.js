@@ -14,8 +14,10 @@ class EditTags extends Component {
         if (e.target.keywords.value === '') {
             return
         } else {
-            // allow comma separated values, discard exisiting tags
-            let newTags = e.target.keywords.value.split(',').filter(tag => {
+            // allow comma separated values, discard tags entered twice and exisiting  ones
+            let newTags = e.target.keywords.value.split(',').filter((tag, idx, newTagsArr) => {
+                return newTagsArr.indexOf(tag) === idx;
+            }).filter(tag => {
                 return this.props.link.tags.indexOf(tag) === -1;
             })
             this.props.addTags(this.props.link.id, newTags);
